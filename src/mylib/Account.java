@@ -17,19 +17,19 @@ public class Account {
     }
 
     public static String translit(String text){
-        String result = "";
+        StringBuilder result = new StringBuilder();
         text = text.toLowerCase();
         for (int i = 0; i<text.length(); i++) {
             int index = ukrAlphabet.indexOf(text.charAt(i));
 
             if(index != -1){
-                result += translitRepl[index];
+                result.append(translitRepl[index]);
             }else{
-                result += text.charAt(i);
+                result.append(text.charAt(i));
             }
         }
 
-        return result;
+        return result.toString();
     }
 
     public static String capitalize(String aStr)
